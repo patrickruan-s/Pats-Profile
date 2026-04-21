@@ -9,8 +9,6 @@ pats_profile_backend/tmp/
 pats_profile_backend/storage/
 pats_profile_backend/.env
 pats_profile_backend/*.env
-pats_profile_backend/db/seeds/art/
-pats_profile_backend/db/seeds/music/
 
 # OS
 .DS_Store
