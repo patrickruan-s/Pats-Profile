@@ -7,7 +7,7 @@ export default function ArtGallery() {
   const [selected, setSelected] = useState(null)
 
   useEffect(() => {
-    fetch('http://localhost:3000/api/v1/artworks')
+    fetch(`${import.meta.env.VITE_API_URL}/api/v1/artworks`)
       .then((res) => {
         if (!res.ok) throw new Error('Failed to load artworks')
         return res.json()
