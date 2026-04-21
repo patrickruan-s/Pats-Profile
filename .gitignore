@@ -1,0 +1,17 @@
+# Frontend
+pats_profile_frontend/node_modules/
+pats_profile_frontend/dist/
+
+# Backend
+pats_profile_frontend/.env.local
+pats_profile_backend/log/
+pats_profile_backend/tmp/
+pats_profile_backend/storage/
+pats_profile_backend/.env
+pats_profile_backend/*.env
+pats_profile_backend/db/seeds/art/
+pats_profile_backend/db/seeds/music/
+
+# OS
+.DS_Store
+Thumbs.db
