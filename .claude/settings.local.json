@@ -4,7 +4,9 @@
       "Bash(bundle install:*)",
       "Bash(bundle exec:*)",
       "Bash(npm install:*)",
-      "Bash(npm run:*)"
+      "Bash(npm run:*)",
+      "Read(//Users/patrickruan/pokedex/**)",
+      "Bash(npx vercel:*)"
     ]
   }
 }

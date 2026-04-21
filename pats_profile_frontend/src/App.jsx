@@ -4,12 +4,14 @@ import AboutSection from './components/AboutSection'
 import ResumeSection from './components/ResumeSection'
 import ArtGallery from './components/ArtGallery'
 import MusicPlayer from './components/MusicPlayer'
+import PokedexSection from './components/PokedexSection'
 
 const TABS = [
   { id: 'about', label: 'About' },
   { id: 'resume', label: 'Resume' },
   { id: 'art', label: 'Art' },
   { id: 'music', label: 'Music' },
+  { id: 'pokedex', label: 'Pokédex' },
 ]
 
 export default function App() {
@@ -57,6 +59,7 @@ export default function App() {
             {activeTab === 'resume' && <ResumeSection />}
             {activeTab === 'art' && <ArtGallery />}
             {activeTab === 'music' && <MusicPlayer />}
+            {activeTab === 'pokedex' && <PokedexSection />}
           </div>
         </main>
       </div>
