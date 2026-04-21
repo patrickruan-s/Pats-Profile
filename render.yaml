@@ -3,9 +3,7 @@ services:
     name: pats-profile-backend
     runtime: ruby
     rootDir: pats_profile_backend
-    buildCommand: |
-      bundle install
-      bundle exec rails db:migrate
+    buildCommand: "bundle install && bundle exec rails db:migrate"
     startCommand: bundle exec rails server -b 0.0.0.0 -p $PORT
     healthCheckPath: /up
     envVars:
