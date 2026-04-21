@@ -14,7 +14,7 @@ export default function ResumeSection() {
       <iframe
         src="/Patrick_Ruan_Resume_2026.pdf"
         className="w-full rounded-lg border border-gray-200"
-        style={{ height: '800px' }}
+        style={{ height: 'min(800px, 75vh)' }}
         title="Resume"
       >
         <p className="text-gray-500 text-center py-10">

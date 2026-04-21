@@ -18,10 +18,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 px-8 py-5 flex items-center gap-4">
+      <header className="bg-white border-b border-gray-200 px-4 md:px-8 py-4 flex items-center gap-4">
         <div>
-          <h1 className="text-2xl font-bold text-gray-900 leading-tight">Pat&apos;s Profile</h1>
-          <p className="text-sm text-gray-500 mt-0.5">Developer · Artist · Musician</p>
+          <h1 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Pat&apos;s Profile</h1>
+          <p className="text-xs md:text-sm text-gray-500 mt-0.5">Developer · Artist · Musician</p>
         </div>
       </header>
 
@@ -32,14 +32,14 @@ export default function App() {
         {/* Main content */}
         <main className="flex-1 flex flex-col min-w-0">
           {/* Tab bar */}
-          <nav className="bg-white border-b border-gray-200 px-8">
-            <div className="flex gap-1">
+          <nav className="bg-white border-b border-gray-200 px-2 md:px-8 overflow-x-auto">
+            <div className="flex">
               {TABS.map((tab) => (
                 <button
                   key={tab.id}
                   onClick={() => setActiveTab(tab.id)}
                   className={[
-                    'px-5 py-4 text-sm font-medium border-b-2 -mb-px transition-colors',
+                    'px-4 md:px-5 py-3 md:py-4 text-sm font-medium border-b-2 -mb-px transition-colors whitespace-nowrap',
                     activeTab === tab.id
                       ? 'border-gray-900 text-gray-900'
                       : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300',
@@ -51,8 +51,8 @@ export default function App() {
             </div>
           </nav>
 
-          {/* Tab content */}
-          <div className="flex-1 p-8 bg-white">
+          {/* Tab content — extra bottom padding on mobile for the fixed link bar */}
+          <div className="flex-1 p-4 md:p-8 pb-24 md:pb-8 bg-white">
             {activeTab === 'about' && <AboutSection />}
             {activeTab === 'resume' && <ResumeSection />}
             {activeTab === 'art' && <ArtGallery />}
