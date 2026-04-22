@@ -14,3 +14,55 @@ body {
 audio {
   width: 100%;
 }
+
+/* Scroll-in fade */
+.fade-in {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animated gradient header */
+@keyframes gradient-shift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.header-gradient {
+  background: linear-gradient(
+    270deg,
+    #a855f7,
+    #6366f1,
+    #3b82f6,
+    #06b6d4,
+    #10b981,
+    #6366f1,
+    #a855f7
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+.gradient-text {
+  background: linear-gradient(
+    270deg,
+    #ffffff,
+    #e0d7ff,
+    #bfdbfe,
+    #a5f3fc,
+    #d9f99d,
+    #e0d7ff,
+    #ffffff
+  );
+  background-size: 300% 300%;
+  animation: gradient-shift 8s ease infinite;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

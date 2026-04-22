@@ -20,10 +20,12 @@ export default function App() {
   return (
     <div className="min-h-screen bg-gray-50 flex flex-col">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 px-4 md:px-8 py-4 flex items-center gap-4">
+      <header className="header-gradient px-4 md:px-8 py-5 flex items-center gap-4">
         <div>
-          <h1 className="text-xl md:text-2xl font-bold text-gray-900 leading-tight">Pat&apos;s Profile</h1>
-          <p className="text-xs md:text-sm text-gray-500 mt-0.5">Developer · Artist · Musician</p>
+          <h1 className="gradient-text text-2xl md:text-3xl font-bold leading-tight tracking-tight">
+            Pat&apos;s Profile
+          </h1>
+          <p className="text-xs md:text-sm text-white/70 mt-1">Developer · Artist · Musician</p>
         </div>
       </header>
 

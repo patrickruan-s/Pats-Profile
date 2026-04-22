@@ -1,9 +1,10 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 export default function MusicPlayer() {
   const [tracks, setTracks] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const audioRefs = useRef({})
 
   useEffect(() => {
     fetch(`${import.meta.env.VITE_API_URL}/api/v1/tracks`)
@@ -51,7 +52,17 @@ export default function MusicPlayer() {
             )}
           </div>
           {track.audio_url ? (
-            <audio controls src={track.audio_url} className="w-full" />
+            <audio
+              controls
+              src={track.audio_url}
+              className="w-full"
+              ref={(el) => { audioRefs.current[track.id] = el }}
+              onPlay={() => {
+                Object.entries(audioRefs.current).forEach(([id, el]) => {
+                  if (el && String(id) !== String(track.id)) el.pause()
+                })
+              }}
+            />
           ) : (
             <p className="text-sm text-gray-400">Audio file not available</p>
           )}
