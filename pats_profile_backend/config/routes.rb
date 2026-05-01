@@ -9,6 +9,8 @@ Rails.application.routes.draw do
     namespace :v1 do
       resources :artworks, only: [ :index ]
       resources :tracks, only: [ :index ]
+      post "chat", to: "chat#create"
+      get "chat/history", to: "chat#history"
     end
   end
 end

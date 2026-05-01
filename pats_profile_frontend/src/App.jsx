@@ -5,6 +5,7 @@ import ResumeSection from './components/ResumeSection'
 import ArtGallery from './components/ArtGallery'
 import MusicPlayer from './components/MusicPlayer'
 import PokedexSection from './components/PokedexSection'
+import ChatBot from './components/ChatBot'
 
 const TABS = [
   { id: 'about', label: 'About' },
@@ -12,6 +13,7 @@ const TABS = [
   { id: 'art', label: 'Art' },
   { id: 'music', label: 'Music' },
   { id: 'pokedex', label: 'Pokédex' },
+  { id: 'chatbot', label: 'Chat' }
 ]
 
 export default function App() {
@@ -23,7 +25,7 @@ export default function App() {
       <header className="header-gradient px-4 md:px-8 py-5 flex items-center gap-4">
         <div>
           <h1 className="gradient-text text-2xl md:text-3xl font-bold leading-tight tracking-tight">
-            Pat&apos;s Profile
+            Patrick&apos;s Profile
           </h1>
           <p className="text-xs md:text-sm text-white/70 mt-1">Developer · Artist · Musician</p>
         </div>
@@ -62,6 +64,7 @@ export default function App() {
             {activeTab === 'art' && <ArtGallery />}
             {activeTab === 'music' && <MusicPlayer />}
             {activeTab === 'pokedex' && <PokedexSection />}
+            {activeTab === 'chatbot' && <ChatBot />}
           </div>
         </main>
       </div>

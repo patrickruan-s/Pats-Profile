@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_04_21_144518) do
+ActiveRecord::Schema[8.1].define(version: 2026_04_30_151419) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -49,6 +49,22 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_21_144518) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "conversations", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.string "session_token"
+    t.datetime "updated_at", null: false
+    t.index ["session_token"], name: "index_conversations_on_session_token", unique: true
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.text "content"
+    t.bigint "conversation_id", null: false
+    t.datetime "created_at", null: false
+    t.string "role"
+    t.datetime "updated_at", null: false
+    t.index ["conversation_id"], name: "index_messages_on_conversation_id"
+  end
+
   create_table "tracks", force: :cascade do |t|
     t.string "artist"
     t.datetime "created_at", null: false
@@ -58,4 +74,5 @@ ActiveRecord::Schema[8.1].define(version: 2026_04_21_144518) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "messages", "conversations"
 end
